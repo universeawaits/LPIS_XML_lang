@@ -20,8 +20,7 @@ namespace xmllang
                 var tokens = new CommonTokenStream(lexer);
                 var parser = new xmllangParser(tokens);
 
-                xmllangParser.TaleContext taleContext = parser.tsql_file();
-                Console.WriteLine("TaleContext.ChildCount = " + taleContext.ChildCount.ToString());
+                var taleContext = parser.tale();
 
                 var walker = new ParseTreeWalker();
                 var listener = new AntlrXMLLangListener();
