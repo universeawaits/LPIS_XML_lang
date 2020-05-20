@@ -23,419 +23,421 @@ using Antlr4.Runtime.Misc;
 using IParseTreeListener = Antlr4.Runtime.Tree.IParseTreeListener;
 using IToken = Antlr4.Runtime.IToken;
 
-/// <summary>
-/// This interface defines a complete listener for a parse tree produced by
-/// <see cref="xmllangParser"/>.
-/// </summary>
-[System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.7.1")]
-[System.CLSCompliant(false)]
-public interface IxmllangListener : IParseTreeListener {
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.tale"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterTale([NotNull] xmllangParser.TaleContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.tale"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitTale([NotNull] xmllangParser.TaleContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>tag_assignment</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterTag_assignment([NotNull] xmllangParser.Tag_assignmentContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>tag_assignment</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitTag_assignment([NotNull] xmllangParser.Tag_assignmentContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>attr_assignment</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterAttr_assignment([NotNull] xmllangParser.Attr_assignmentContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>attr_assignment</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitAttr_assignment([NotNull] xmllangParser.Attr_assignmentContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>gen_file</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterGen_file([NotNull] xmllangParser.Gen_fileContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>gen_file</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitGen_file([NotNull] xmllangParser.Gen_fileContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>parse_file</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterParse_file([NotNull] xmllangParser.Parse_fileContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>parse_file</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitParse_file([NotNull] xmllangParser.Parse_fileContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>add_text</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterAdd_text([NotNull] xmllangParser.Add_textContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>add_text</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitAdd_text([NotNull] xmllangParser.Add_textContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>append_tag</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterAppend_tag([NotNull] xmllangParser.Append_tagContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>append_tag</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitAppend_tag([NotNull] xmllangParser.Append_tagContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>append_atr</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterAppend_atr([NotNull] xmllangParser.Append_atrContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>append_atr</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitAppend_atr([NotNull] xmllangParser.Append_atrContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>remove_tag</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterRemove_tag([NotNull] xmllangParser.Remove_tagContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>remove_tag</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitRemove_tag([NotNull] xmllangParser.Remove_tagContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>remove_atr</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterRemove_atr([NotNull] xmllangParser.Remove_atrContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>remove_atr</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitRemove_atr([NotNull] xmllangParser.Remove_atrContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>declare_array</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterDeclare_array([NotNull] xmllangParser.Declare_arrayContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>declare_array</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitDeclare_array([NotNull] xmllangParser.Declare_arrayContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>search_tag</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterSearch_tag([NotNull] xmllangParser.Search_tagContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>search_tag</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitSearch_tag([NotNull] xmllangParser.Search_tagContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>for_cycle</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterFor_cycle([NotNull] xmllangParser.For_cycleContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>for_cycle</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitFor_cycle([NotNull] xmllangParser.For_cycleContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>function_declaration</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterFunction_declaration([NotNull] xmllangParser.Function_declarationContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>function_declaration</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitFunction_declaration([NotNull] xmllangParser.Function_declarationContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>function_call</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterFunction_call([NotNull] xmllangParser.Function_callContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>function_call</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitFunction_call([NotNull] xmllangParser.Function_callContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>if_declaration</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterIf_declaration([NotNull] xmllangParser.If_declarationContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>if_declaration</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitIf_declaration([NotNull] xmllangParser.If_declarationContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>assign_new_value</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterAssign_new_value([NotNull] xmllangParser.Assign_new_valueContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>assign_new_value</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitAssign_new_value([NotNull] xmllangParser.Assign_new_valueContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>comment_fun</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterComment_fun([NotNull] xmllangParser.Comment_funContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>comment_fun</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitComment_fun([NotNull] xmllangParser.Comment_funContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>print</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterPrint([NotNull] xmllangParser.PrintContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>print</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitPrint([NotNull] xmllangParser.PrintContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>access_name</c>
-	/// labeled alternative in <see cref="xmllangParser.access_info"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterAccess_name([NotNull] xmllangParser.Access_nameContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>access_name</c>
-	/// labeled alternative in <see cref="xmllangParser.access_info"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitAccess_name([NotNull] xmllangParser.Access_nameContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>access_text</c>
-	/// labeled alternative in <see cref="xmllangParser.access_info"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterAccess_text([NotNull] xmllangParser.Access_textContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>access_text</c>
-	/// labeled alternative in <see cref="xmllangParser.access_info"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitAccess_text([NotNull] xmllangParser.Access_textContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>access_value</c>
-	/// labeled alternative in <see cref="xmllangParser.access_info"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterAccess_value([NotNull] xmllangParser.Access_valueContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>access_value</c>
-	/// labeled alternative in <see cref="xmllangParser.access_info"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitAccess_value([NotNull] xmllangParser.Access_valueContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>caseId</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterCaseId([NotNull] xmllangParser.CaseIdContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>caseId</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitCaseId([NotNull] xmllangParser.CaseIdContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>caseStr</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterCaseStr([NotNull] xmllangParser.CaseStrContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>caseStr</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitCaseStr([NotNull] xmllangParser.CaseStrContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>caseInt</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterCaseInt([NotNull] xmllangParser.CaseIntContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>caseInt</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitCaseInt([NotNull] xmllangParser.CaseIntContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.case_block"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterCase_block([NotNull] xmllangParser.Case_blockContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.case_block"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitCase_block([NotNull] xmllangParser.Case_blockContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.print_statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterPrint_statement([NotNull] xmllangParser.Print_statementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.print_statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitPrint_statement([NotNull] xmllangParser.Print_statementContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.begin_for"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterBegin_for([NotNull] xmllangParser.Begin_forContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.begin_for"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitBegin_for([NotNull] xmllangParser.Begin_forContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.end"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterEnd([NotNull] xmllangParser.EndContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.end"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitEnd([NotNull] xmllangParser.EndContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.datatype"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterDatatype([NotNull] xmllangParser.DatatypeContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.datatype"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitDatatype([NotNull] xmllangParser.DatatypeContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.function_decl"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterFunction_decl([NotNull] xmllangParser.Function_declContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.function_decl"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitFunction_decl([NotNull] xmllangParser.Function_declContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.begin_if"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterBegin_if([NotNull] xmllangParser.Begin_ifContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.begin_if"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitBegin_if([NotNull] xmllangParser.Begin_ifContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.comparison"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterComparison([NotNull] xmllangParser.ComparisonContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.comparison"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitComparison([NotNull] xmllangParser.ComparisonContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.else_thing"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterElse_thing([NotNull] xmllangParser.Else_thingContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.else_thing"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitElse_thing([NotNull] xmllangParser.Else_thingContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.comment"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterComment([NotNull] xmllangParser.CommentContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.comment"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitComment([NotNull] xmllangParser.CommentContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.switch_stat"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterSwitch_stat([NotNull] xmllangParser.Switch_statContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.switch_stat"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitSwitch_stat([NotNull] xmllangParser.Switch_statContext context);
+namespace xmllang {
+	/// <summary>
+	/// This interface defines a complete listener for a parse tree produced by
+	/// <see cref="xmllangParser"/>.
+	/// </summary>
+	[System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.7.1")]
+	[System.CLSCompliant(false)]
+	public interface IxmllangListener : IParseTreeListener {
+		/// <summary>
+		/// Enter a parse tree produced by <see cref="xmllangParser.tale"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterTale([NotNull] xmllangParser.TaleContext context);
+		/// <summary>
+		/// Exit a parse tree produced by <see cref="xmllangParser.tale"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitTale([NotNull] xmllangParser.TaleContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>tag_assignment</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterTag_assignment([NotNull] xmllangParser.Tag_assignmentContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>tag_assignment</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitTag_assignment([NotNull] xmllangParser.Tag_assignmentContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>attr_assignment</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterAttr_assignment([NotNull] xmllangParser.Attr_assignmentContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>attr_assignment</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitAttr_assignment([NotNull] xmllangParser.Attr_assignmentContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>gen_file</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterGen_file([NotNull] xmllangParser.Gen_fileContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>gen_file</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitGen_file([NotNull] xmllangParser.Gen_fileContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>parse_file</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterParse_file([NotNull] xmllangParser.Parse_fileContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>parse_file</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitParse_file([NotNull] xmllangParser.Parse_fileContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>add_text</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterAdd_text([NotNull] xmllangParser.Add_textContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>add_text</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitAdd_text([NotNull] xmllangParser.Add_textContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>append_tag</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterAppend_tag([NotNull] xmllangParser.Append_tagContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>append_tag</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitAppend_tag([NotNull] xmllangParser.Append_tagContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>append_atr</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterAppend_atr([NotNull] xmllangParser.Append_atrContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>append_atr</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitAppend_atr([NotNull] xmllangParser.Append_atrContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>remove_tag</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterRemove_tag([NotNull] xmllangParser.Remove_tagContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>remove_tag</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitRemove_tag([NotNull] xmllangParser.Remove_tagContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>remove_atr</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterRemove_atr([NotNull] xmllangParser.Remove_atrContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>remove_atr</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitRemove_atr([NotNull] xmllangParser.Remove_atrContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>declare_array</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterDeclare_array([NotNull] xmllangParser.Declare_arrayContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>declare_array</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitDeclare_array([NotNull] xmllangParser.Declare_arrayContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>search_tag</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterSearch_tag([NotNull] xmllangParser.Search_tagContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>search_tag</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitSearch_tag([NotNull] xmllangParser.Search_tagContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>for_cycle</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterFor_cycle([NotNull] xmllangParser.For_cycleContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>for_cycle</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitFor_cycle([NotNull] xmllangParser.For_cycleContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>function_declaration</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterFunction_declaration([NotNull] xmllangParser.Function_declarationContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>function_declaration</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitFunction_declaration([NotNull] xmllangParser.Function_declarationContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>function_call</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterFunction_call([NotNull] xmllangParser.Function_callContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>function_call</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitFunction_call([NotNull] xmllangParser.Function_callContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>if_declaration</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterIf_declaration([NotNull] xmllangParser.If_declarationContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>if_declaration</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitIf_declaration([NotNull] xmllangParser.If_declarationContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>assign_new_value</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterAssign_new_value([NotNull] xmllangParser.Assign_new_valueContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>assign_new_value</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitAssign_new_value([NotNull] xmllangParser.Assign_new_valueContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>comment_fun</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterComment_fun([NotNull] xmllangParser.Comment_funContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>comment_fun</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitComment_fun([NotNull] xmllangParser.Comment_funContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>print</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterPrint([NotNull] xmllangParser.PrintContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>print</c>
+		/// labeled alternative in <see cref="xmllangParser.statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitPrint([NotNull] xmllangParser.PrintContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>access_name</c>
+		/// labeled alternative in <see cref="xmllangParser.access_info"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterAccess_name([NotNull] xmllangParser.Access_nameContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>access_name</c>
+		/// labeled alternative in <see cref="xmllangParser.access_info"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitAccess_name([NotNull] xmllangParser.Access_nameContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>access_text</c>
+		/// labeled alternative in <see cref="xmllangParser.access_info"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterAccess_text([NotNull] xmllangParser.Access_textContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>access_text</c>
+		/// labeled alternative in <see cref="xmllangParser.access_info"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitAccess_text([NotNull] xmllangParser.Access_textContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>access_value</c>
+		/// labeled alternative in <see cref="xmllangParser.access_info"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterAccess_value([NotNull] xmllangParser.Access_valueContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>access_value</c>
+		/// labeled alternative in <see cref="xmllangParser.access_info"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitAccess_value([NotNull] xmllangParser.Access_valueContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>caseId</c>
+		/// labeled alternative in <see cref="xmllangParser.value"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterCaseId([NotNull] xmllangParser.CaseIdContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>caseId</c>
+		/// labeled alternative in <see cref="xmllangParser.value"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitCaseId([NotNull] xmllangParser.CaseIdContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>caseStr</c>
+		/// labeled alternative in <see cref="xmllangParser.value"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterCaseStr([NotNull] xmllangParser.CaseStrContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>caseStr</c>
+		/// labeled alternative in <see cref="xmllangParser.value"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitCaseStr([NotNull] xmllangParser.CaseStrContext context);
+		/// <summary>
+		/// Enter a parse tree produced by the <c>caseInt</c>
+		/// labeled alternative in <see cref="xmllangParser.value"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterCaseInt([NotNull] xmllangParser.CaseIntContext context);
+		/// <summary>
+		/// Exit a parse tree produced by the <c>caseInt</c>
+		/// labeled alternative in <see cref="xmllangParser.value"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitCaseInt([NotNull] xmllangParser.CaseIntContext context);
+		/// <summary>
+		/// Enter a parse tree produced by <see cref="xmllangParser.case_block"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterCase_block([NotNull] xmllangParser.Case_blockContext context);
+		/// <summary>
+		/// Exit a parse tree produced by <see cref="xmllangParser.case_block"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitCase_block([NotNull] xmllangParser.Case_blockContext context);
+		/// <summary>
+		/// Enter a parse tree produced by <see cref="xmllangParser.print_statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterPrint_statement([NotNull] xmllangParser.Print_statementContext context);
+		/// <summary>
+		/// Exit a parse tree produced by <see cref="xmllangParser.print_statement"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitPrint_statement([NotNull] xmllangParser.Print_statementContext context);
+		/// <summary>
+		/// Enter a parse tree produced by <see cref="xmllangParser.begin_for"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterBegin_for([NotNull] xmllangParser.Begin_forContext context);
+		/// <summary>
+		/// Exit a parse tree produced by <see cref="xmllangParser.begin_for"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitBegin_for([NotNull] xmllangParser.Begin_forContext context);
+		/// <summary>
+		/// Enter a parse tree produced by <see cref="xmllangParser.end"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterEnd([NotNull] xmllangParser.EndContext context);
+		/// <summary>
+		/// Exit a parse tree produced by <see cref="xmllangParser.end"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitEnd([NotNull] xmllangParser.EndContext context);
+		/// <summary>
+		/// Enter a parse tree produced by <see cref="xmllangParser.datatype"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterDatatype([NotNull] xmllangParser.DatatypeContext context);
+		/// <summary>
+		/// Exit a parse tree produced by <see cref="xmllangParser.datatype"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitDatatype([NotNull] xmllangParser.DatatypeContext context);
+		/// <summary>
+		/// Enter a parse tree produced by <see cref="xmllangParser.function_decl"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterFunction_decl([NotNull] xmllangParser.Function_declContext context);
+		/// <summary>
+		/// Exit a parse tree produced by <see cref="xmllangParser.function_decl"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitFunction_decl([NotNull] xmllangParser.Function_declContext context);
+		/// <summary>
+		/// Enter a parse tree produced by <see cref="xmllangParser.begin_if"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterBegin_if([NotNull] xmllangParser.Begin_ifContext context);
+		/// <summary>
+		/// Exit a parse tree produced by <see cref="xmllangParser.begin_if"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitBegin_if([NotNull] xmllangParser.Begin_ifContext context);
+		/// <summary>
+		/// Enter a parse tree produced by <see cref="xmllangParser.comparison"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterComparison([NotNull] xmllangParser.ComparisonContext context);
+		/// <summary>
+		/// Exit a parse tree produced by <see cref="xmllangParser.comparison"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitComparison([NotNull] xmllangParser.ComparisonContext context);
+		/// <summary>
+		/// Enter a parse tree produced by <see cref="xmllangParser.else_thing"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterElse_thing([NotNull] xmllangParser.Else_thingContext context);
+		/// <summary>
+		/// Exit a parse tree produced by <see cref="xmllangParser.else_thing"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitElse_thing([NotNull] xmllangParser.Else_thingContext context);
+		/// <summary>
+		/// Enter a parse tree produced by <see cref="xmllangParser.comment"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterComment([NotNull] xmllangParser.CommentContext context);
+		/// <summary>
+		/// Exit a parse tree produced by <see cref="xmllangParser.comment"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitComment([NotNull] xmllangParser.CommentContext context);
+		/// <summary>
+		/// Enter a parse tree produced by <see cref="xmllangParser.switch_stat"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void EnterSwitch_stat([NotNull] xmllangParser.Switch_statContext context);
+		/// <summary>
+		/// Exit a parse tree produced by <see cref="xmllangParser.switch_stat"/>.
+		/// </summary>
+		/// <param name="context">The parse tree.</param>
+		void ExitSwitch_stat([NotNull] xmllangParser.Switch_statContext context);
+	}
 }
