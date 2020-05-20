@@ -19,6 +19,7 @@
 // Ambiguous reference in cref attribute
 #pragma warning disable 419
 
+namespace xmllang {
 using System;
 using System.IO;
 using System.Text;
@@ -120,6 +121,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitTale(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTale(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -188,6 +194,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitAssign_new_value(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAssign_new_value(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class Gen_fileContext : StatementContext {
 		public ITerminalNode GEN() { return GetToken(xmllangParser.GEN, 0); }
@@ -209,6 +220,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitGen_file(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitGen_file(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class For_cycleContext : StatementContext {
@@ -232,6 +248,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitFor_cycle(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFor_cycle(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class Function_callContext : StatementContext {
@@ -259,6 +280,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitFunction_call(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFunction_call(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class Declare_arrayContext : StatementContext {
 		public ITerminalNode ARRAY() { return GetToken(xmllangParser.ARRAY, 0); }
@@ -276,6 +302,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitDeclare_array(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDeclare_array(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class If_declarationContext : StatementContext {
@@ -303,6 +334,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitIf_declaration(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIf_declaration(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class Parse_fileContext : StatementContext {
 		public ITerminalNode PARSE() { return GetToken(xmllangParser.PARSE, 0); }
@@ -325,6 +361,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitParse_file(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitParse_file(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class PrintContext : StatementContext {
 		public Print_statementContext print_statement() {
@@ -338,6 +379,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitPrint(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitPrint(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class Append_tagContext : StatementContext {
@@ -360,6 +406,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitAppend_tag(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAppend_tag(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class Comment_funContext : StatementContext {
 		public CommentContext comment() {
@@ -373,6 +424,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitComment_fun(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitComment_fun(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class Tag_assignmentContext : StatementContext {
@@ -395,6 +451,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitTag_assignment(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTag_assignment(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class Append_atrContext : StatementContext {
 		public ITerminalNode[] ID() { return GetTokens(xmllangParser.ID); }
@@ -416,6 +477,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitAppend_atr(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAppend_atr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class Remove_atrContext : StatementContext {
 		public ITerminalNode[] ID() { return GetTokens(xmllangParser.ID); }
@@ -436,6 +502,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitRemove_atr(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRemove_atr(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class Attr_assignmentContext : StatementContext {
@@ -462,6 +533,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitAttr_assignment(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAttr_assignment(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class Add_textContext : StatementContext {
 		public ITerminalNode ID() { return GetToken(xmllangParser.ID, 0); }
@@ -480,6 +556,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitAdd_text(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAdd_text(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class Remove_tagContext : StatementContext {
@@ -501,6 +582,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitRemove_tag(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRemove_tag(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class Function_declarationContext : StatementContext {
@@ -524,6 +610,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitFunction_declaration(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFunction_declaration(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -1018,6 +1109,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitAccess_name(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAccess_name(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class Access_valueContext : Access_infoContext {
 		public ITerminalNode ID() { return GetToken(xmllangParser.ID, 0); }
@@ -1032,6 +1128,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitAccess_value(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAccess_value(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class Access_textContext : Access_infoContext {
 		public ITerminalNode ID() { return GetToken(xmllangParser.ID, 0); }
@@ -1045,6 +1146,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitAccess_text(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAccess_text(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -1119,6 +1225,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitCaseStr(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCaseStr(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class CaseIdContext : ValueContext {
 		public ITerminalNode ID() { return GetToken(xmllangParser.ID, 0); }
@@ -1131,6 +1242,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitCaseId(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCaseId(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class CaseIntContext : ValueContext {
 		public ITerminalNode INT() { return GetToken(xmllangParser.INT, 0); }
@@ -1142,6 +1258,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitCaseInt(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCaseInt(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -1212,6 +1333,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitCase_block(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCase_block(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -1274,6 +1400,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitPrint_statement(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitPrint_statement(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -1325,6 +1456,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitBegin_for(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitBegin_for(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -1392,6 +1528,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitEnd(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitEnd(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -1446,6 +1587,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitDatatype(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDatatype(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -1514,6 +1660,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitFunction_decl(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFunction_decl(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -1613,6 +1764,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitBegin_if(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitBegin_if(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -1664,6 +1820,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitComparison(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitComparison(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -1723,6 +1884,11 @@ public partial class xmllangParser : Parser {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitElse_thing(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitElse_thing(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -1766,6 +1932,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitComment(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitComment(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -1832,6 +2003,11 @@ public partial class xmllangParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IxmllangListener typedListener = listener as IxmllangListener;
 			if (typedListener != null) typedListener.ExitSwitch_stat(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IxmllangVisitor<TResult> typedVisitor = visitor as IxmllangVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSwitch_stat(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -2193,3 +2369,4 @@ public partial class xmllangParser : Parser {
 
 
 }
+} // namespace xmllang

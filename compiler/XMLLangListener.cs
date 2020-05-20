@@ -4,7 +4,7 @@ using Antlr4.Runtime;
 using Antlr4.Runtime.Misc;
 
 namespace xmllang {
-    public class AntlrXMLLangListener : xmllangBaseListener
+    public class XMLLangListener : xmllangBaseListener
     {
         public override void EnterTale([NotNull] xmllangParser.TaleContext context) { }
         
@@ -49,10 +49,6 @@ namespace xmllang {
 		public override void EnterDeclare_array([NotNull] xmllangParser.Declare_arrayContext context) { }
         
 		public override void ExitDeclare_array([NotNull] xmllangParser.Declare_arrayContext context) { }
-        
-		public override void EnterSearch_tag([NotNull] xmllangParser.Search_tagContext context) { }
-        
-		public override void ExitSearch_tag([NotNull] xmllangParser.Search_tagContext context) { }
         
 		public override void EnterFor_cycle([NotNull] xmllangParser.For_cycleContext context) { }
         

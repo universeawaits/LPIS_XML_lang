@@ -43,15 +43,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Antlr4": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "Antlr4.Runtime.Standard": {
               "target": "Package",
-              "version": "[4.6.6, )"
-            },
-            "Antlr4.Runtime": {
-              "target": "Package",
-              "version": "(, )"
+              "version": "[4.8.0, )"
             }
           },
           "imports": [

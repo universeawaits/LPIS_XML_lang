@@ -1,1 +1,4 @@
 .antlr
+bin
+obj
+.vs

@@ -19,6 +19,7 @@
 // Ambiguous reference in cref attribute
 #pragma warning disable 419
 
+namespace xmllang {
 using System;
 using System.IO;
 using System.Text;
@@ -370,3 +371,4 @@ public partial class xmllangLexer : Lexer {
 
 
 }
+} // namespace xmllang
