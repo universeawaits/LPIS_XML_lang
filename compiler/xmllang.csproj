@@ -10,4 +10,14 @@
     <PackageReference Include="Antlr4.Runtime.Standard" Version="4.8.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="eg_function.xlg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="compiled\" />
+  </ItemGroup>
+
 </Project>

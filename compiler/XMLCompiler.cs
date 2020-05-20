@@ -1,8 +1,6 @@
 using System;
 using System.IO;
 using Antlr4.Runtime;
-using Antlr4.Runtime.Misc;
-using Antlr4.Runtime.Tree;
 
 namespace xmllang
 {
@@ -20,12 +18,12 @@ namespace xmllang
             var visitor = new XMLLangVisitor();
             var result = visitor.Visit(tree);
             
-            Console.WriteLine(result);
+            File.WriteAllText("..\\..\\..\\compiled\\Main.cs", result.ToString());
         }
 
         public static void Main(string[] args)
         {
-            Parse(args[0]);
+            Parse("eg_function.xlg");
         }
     }
 }
