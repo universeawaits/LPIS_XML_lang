@@ -8,8 +8,9 @@ namespace xmllang
 {
     public class XMLCompiler
     {
-        static void Try(string input)
+        static void Parse(string filepath)
         {
+            var input = File.ReadAllText(filepath);
             var str = new AntlrInputStream(input);
             var lexer = new xmllangLexer(str);
             var tokens = new CommonTokenStream(lexer);
@@ -17,12 +18,14 @@ namespace xmllang
             var tree = parser.tale();
             
             var visitor = new XMLLangVisitor();
-            visitor.Visit(tree);
+            var result = visitor.Visit(tree);
+            
+            Console.WriteLine(result);
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Try(args[1]);
+            Parse(args[0]);
         }
     }
 }
