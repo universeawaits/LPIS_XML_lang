@@ -1,10 +1,10 @@
-# Свойства языка
-1. Неявное объявление переменных
-2. Неявное преобразование типов
-3. Одноцелевой оператор присваивая
-4. Подпрограммы ограничивают область видимости
-5. Маркер блочного оператора - {}
-6. Условные операторы if-then-else и switch-case
-7. Отсутствует перегрузка подпрограмм
-8. Передача параметров в подпрограмму - только по значению и возвращаемому значению
-9. Допустимое место объявления подпрограмм - в начале программы
+# Language properties
+1. Explicit var declaration
+2. Implicit type cast
+3. Single-purpose assignment operator
+4. Var scope boundary is function
+5. Block bounds - {}
+6. Conditional operators: if-then-else, switch-case
+7. No function override
+8. Passing parameters by value only
+9. Functions can be defined anywhere in file
