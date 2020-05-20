@@ -58,7 +58,6 @@ statement:
     | SPACE* ID SPACE REMOVE_CHILD SPACE ID NEWLINE                                       # remove_tag
     | SPACE* ID SPACE REMOVE_ATTR SPACE ID NEWLINE                                        # remove_atr
     | SPACE* ARRAY SPACE ID NEWLINE                                                       # declare_array
-    | SPACE* ID SPACE ASSIGN SPACE ID AT ID NEWLINE                                       # search_tag
     | begin_for statement+ end                                                            # for_cycle
     | function_decl statement+ end                                                        # function_declaration
     | ID OPEN_BRACKET (ID(COMMA SPACE ID)*)* CLOSE_BRACKET NEWLINE                        # function_call
