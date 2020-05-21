@@ -7,4 +7,4 @@
 6. Conditional operators: if-then-else, switch-case
 7. No function override
 8. Passing parameters by value only
-9. Functions can be defined anywhere in file
+9. Functions can be defined anywhere in file, but before call

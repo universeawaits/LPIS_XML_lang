@@ -1,0 +1,12 @@
+a(node tag) {
+	attr attribute("attr1", "value1")
+	tag adds attr attribute
+	node tik("tik")
+	node tak("tak")
+	print tag
+}
+
+b() {
+	node document("document")
+	a(document)
+}

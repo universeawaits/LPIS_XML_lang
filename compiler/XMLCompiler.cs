@@ -18,12 +18,12 @@ namespace xmllang
             var visitor = new XMLLangVisitor();
             var result = visitor.Visit(tree);
             
-            File.WriteAllText("..\\..\\..\\compiled\\Main.cs", result.ToString());
+            File.WriteAllText("..\\..\\..\\compiled\\Tale.cs", result.ToString());
         }
 
         public static void Main(string[] args)
         {
-            Parse("eg_function.xlg");
+            Parse("tale.xlg");
         }
     }
 }

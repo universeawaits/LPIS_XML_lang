@@ -39,6 +39,18 @@ public interface IxmllangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitTale([NotNull] xmllangParser.TaleContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="xmllangParser.function_declaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFunction_declaration([NotNull] xmllangParser.Function_declarationContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="xmllangParser.empty_stat"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitEmpty_stat([NotNull] xmllangParser.Empty_statContext context);
+	/// <summary>
 	/// Visit a parse tree produced by the <c>tag_assignment</c>
 	/// labeled alternative in <see cref="xmllangParser.statement"/>.
 	/// </summary>
@@ -52,6 +64,13 @@ public interface IxmllangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitAttr_assignment([NotNull] xmllangParser.Attr_assignmentContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>primitive_assignment</c>
+	/// labeled alternative in <see cref="xmllangParser.statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPrimitive_assignment([NotNull] xmllangParser.Primitive_assignmentContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>gen_file</c>
 	/// labeled alternative in <see cref="xmllangParser.statement"/>.
@@ -116,13 +135,6 @@ public interface IxmllangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitFor_cycle([NotNull] xmllangParser.For_cycleContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>function_declaration</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitFunction_declaration([NotNull] xmllangParser.Function_declarationContext context);
-	/// <summary>
 	/// Visit a parse tree produced by the <c>function_call</c>
 	/// labeled alternative in <see cref="xmllangParser.statement"/>.
 	/// </summary>
@@ -144,19 +156,19 @@ public interface IxmllangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitAssign_new_value([NotNull] xmllangParser.Assign_new_valueContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>comment_fun</c>
-	/// labeled alternative in <see cref="xmllangParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitComment_fun([NotNull] xmllangParser.Comment_funContext context);
-	/// <summary>
 	/// Visit a parse tree produced by the <c>print</c>
 	/// labeled alternative in <see cref="xmllangParser.statement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitPrint([NotNull] xmllangParser.PrintContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>estat</c>
+	/// labeled alternative in <see cref="xmllangParser.statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitEstat([NotNull] xmllangParser.EstatContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>access_name</c>
 	/// labeled alternative in <see cref="xmllangParser.access_info"/>.
@@ -178,6 +190,12 @@ public interface IxmllangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitAccess_value([NotNull] xmllangParser.Access_valueContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="xmllangParser.primitive_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPrimitive_value([NotNull] xmllangParser.Primitive_valueContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>caseId</c>
 	/// labeled alternative in <see cref="xmllangParser.value"/>.
@@ -230,11 +248,23 @@ public interface IxmllangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitDatatype([NotNull] xmllangParser.DatatypeContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="xmllangParser.primitive"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPrimitive([NotNull] xmllangParser.PrimitiveContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="xmllangParser.function_decl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitFunction_decl([NotNull] xmllangParser.Function_declContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="xmllangParser.function_args"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFunction_args([NotNull] xmllangParser.Function_argsContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="xmllangParser.begin_if"/>.
 	/// </summary>
@@ -253,12 +283,6 @@ public interface IxmllangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitElse_thing([NotNull] xmllangParser.Else_thingContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="xmllangParser.comment"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitComment([NotNull] xmllangParser.CommentContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="xmllangParser.switch_stat"/>.
 	/// </summary>

@@ -3,27 +3,50 @@ using System.Collections.Generic;
 namespace xmllang {
     public class VarScope
     {
-        private IDictionary<string, string> _vars;
-
-        public VarScope()
+        public class Var
         {
-            _vars = new Dictionary<string, string>();
+            public string Type { get; }
+            public object Value { get; set; }
+
+            public Var(string type, object value)
+            {
+                Type = type;
+                Value = value;
+            }
         }
 
-        public string GetVarValue(string varName) => _vars.TryGetValue(varName, out var value) ? value : null;
+        public IDictionary<string, Var> Vars { get; private set; }
+        public string Name { get; }
 
-        public void SetVarValue(string varName, string varValue)
+        public VarScope(string scopeName)
         {
-            if (_vars.Remove(varName)) _vars.Add(varName, varValue);
+            Name = scopeName;
+            Vars = new Dictionary<string, Var>();
         }
 
-        public void CreateVar(string varName, string varValue = null) => _vars.Add(varName, varValue);
+        public VarScope(string scopeName, IDictionary<string, Var> vars)
+        {
+            Name = scopeName;
+            Vars = vars;
+        }
 
-        public bool DeleteVar(string varName) => _vars.Remove(varName);
+        public object GetVarValue(string varName) => Vars.TryGetValue(varName, out Var var) ? var.Value : null;
+
+        public string GetVarType(string varName) => Vars.TryGetValue(varName, out Var var) ? var.Type : null;
+
+        public void SetVarValue(string varName, object varValue)
+        {
+            Vars.TryGetValue(varName, out Var var);
+            var.Value = varValue;
+        }
+
+        public void CreateVar(string varName, string varType, object varValue = null) => Vars.Add(varName, new Var(varType, varValue));
+
+        public bool DeleteVar(string varName) => Vars.Remove(varName);
 
         public void ClearScope()
         {
-            _vars.Clear();
+            Vars.Clear();
         }
     }
 }
