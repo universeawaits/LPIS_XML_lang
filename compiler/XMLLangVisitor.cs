@@ -216,9 +216,15 @@ namespace xmllang
             }
 
             CurrentFunction.Content.Append($"{functionName}(");
+            var argsCount = context.function_call_arg().Length;
             var result = VisitChildren(context);
 
-            CurrentFunction.Content.Remove(CurrentFunction.Content.Length - 2, 2).Append($");\n");
+            if (argsCount > 0)
+            {
+                CurrentFunction.Content.Remove(CurrentFunction.Content.Length - 2, 2);
+            }
+            CurrentFunction.Content.Append($");\n");
+
             return result;
         }
 
