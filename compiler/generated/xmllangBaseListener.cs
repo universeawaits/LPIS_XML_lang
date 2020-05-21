@@ -48,6 +48,18 @@ public partial class xmllangBaseListener : IxmllangListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitTale([NotNull] xmllangParser.TaleContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="xmllangParser.primitive_value"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterPrimitive_value([NotNull] xmllangParser.Primitive_valueContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="xmllangParser.primitive_value"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitPrimitive_value([NotNull] xmllangParser.Primitive_valueContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="xmllangParser.function_declaration"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -352,59 +364,17 @@ public partial class xmllangBaseListener : IxmllangListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitAccess_value([NotNull] xmllangParser.Access_valueContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.primitive_value"/>.
+	/// Enter a parse tree produced by <see cref="xmllangParser.value"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterPrimitive_value([NotNull] xmllangParser.Primitive_valueContext context) { }
+	public virtual void EnterValue([NotNull] xmllangParser.ValueContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.primitive_value"/>.
+	/// Exit a parse tree produced by <see cref="xmllangParser.value"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitPrimitive_value([NotNull] xmllangParser.Primitive_valueContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by the <c>caseId</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterCaseId([NotNull] xmllangParser.CaseIdContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by the <c>caseId</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitCaseId([NotNull] xmllangParser.CaseIdContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by the <c>caseStr</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterCaseStr([NotNull] xmllangParser.CaseStrContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by the <c>caseStr</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitCaseStr([NotNull] xmllangParser.CaseStrContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by the <c>caseInt</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterCaseInt([NotNull] xmllangParser.CaseIntContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by the <c>caseInt</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitCaseInt([NotNull] xmllangParser.CaseIntContext context) { }
+	public virtual void ExitValue([NotNull] xmllangParser.ValueContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="xmllangParser.case_block"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -466,18 +436,6 @@ public partial class xmllangBaseListener : IxmllangListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitDatatype([NotNull] xmllangParser.DatatypeContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="xmllangParser.primitive"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterPrimitive([NotNull] xmllangParser.PrimitiveContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="xmllangParser.primitive"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitPrimitive([NotNull] xmllangParser.PrimitiveContext context) { }
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="xmllangParser.function_decl"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -490,6 +448,18 @@ public partial class xmllangBaseListener : IxmllangListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitFunction_decl([NotNull] xmllangParser.Function_declContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="xmllangParser.id"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterId([NotNull] xmllangParser.IdContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="xmllangParser.id"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitId([NotNull] xmllangParser.IdContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="xmllangParser.function_args"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -501,6 +471,18 @@ public partial class xmllangBaseListener : IxmllangListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitFunction_args([NotNull] xmllangParser.Function_argsContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="xmllangParser.function_call_arg"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterFunction_call_arg([NotNull] xmllangParser.Function_call_argContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="xmllangParser.function_call_arg"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitFunction_call_arg([NotNull] xmllangParser.Function_call_argContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="xmllangParser.begin_if"/>.
 	/// <para>The default implementation does nothing.</para>

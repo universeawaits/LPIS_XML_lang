@@ -1,4 +1,4 @@
-a(node tag) {
+a(node tag, node hahatag) {
 	attr attribute("attr1", "value1")
 	tag adds attr attribute
 	node tik("tik")
@@ -6,11 +6,16 @@ a(node tag) {
 	print tag
 }
 
+ccc_aaa(string a) {
+	node c("Ss")
+}
+	
 b() {
 	node document("document")
 	node dd("dd")
 	attr aa("1", "2")
 	document adds child dd
-	a(document)
+	a(document, dd)
 	document removes attr aa
+	ccc_aaa(aa.name)
 }

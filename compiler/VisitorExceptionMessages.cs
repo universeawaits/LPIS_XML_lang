@@ -11,5 +11,6 @@ namespace xmllang
         public static string InvalidCast = "Invalid type cast";
         public static string UndefinedFunction = "Undefined function";
         public static string AlreadyDefinedFunction = "Function already defined";
+        public static string WrongVarType = "Wrong var type";
     }
 }

@@ -39,6 +39,12 @@ public interface IxmllangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitTale([NotNull] xmllangParser.TaleContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="xmllangParser.primitive_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPrimitive_value([NotNull] xmllangParser.Primitive_valueContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="xmllangParser.function_declaration"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -191,32 +197,11 @@ public interface IxmllangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitAccess_value([NotNull] xmllangParser.Access_valueContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="xmllangParser.primitive_value"/>.
+	/// Visit a parse tree produced by <see cref="xmllangParser.value"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitPrimitive_value([NotNull] xmllangParser.Primitive_valueContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>caseId</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitCaseId([NotNull] xmllangParser.CaseIdContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>caseStr</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitCaseStr([NotNull] xmllangParser.CaseStrContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>caseInt</c>
-	/// labeled alternative in <see cref="xmllangParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitCaseInt([NotNull] xmllangParser.CaseIntContext context);
+	Result VisitValue([NotNull] xmllangParser.ValueContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="xmllangParser.case_block"/>.
 	/// </summary>
@@ -248,23 +233,29 @@ public interface IxmllangVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitDatatype([NotNull] xmllangParser.DatatypeContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="xmllangParser.primitive"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitPrimitive([NotNull] xmllangParser.PrimitiveContext context);
-	/// <summary>
 	/// Visit a parse tree produced by <see cref="xmllangParser.function_decl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitFunction_decl([NotNull] xmllangParser.Function_declContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="xmllangParser.id"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitId([NotNull] xmllangParser.IdContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="xmllangParser.function_args"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitFunction_args([NotNull] xmllangParser.Function_argsContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="xmllangParser.function_call_arg"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFunction_call_arg([NotNull] xmllangParser.Function_call_argContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="xmllangParser.begin_if"/>.
 	/// </summary>

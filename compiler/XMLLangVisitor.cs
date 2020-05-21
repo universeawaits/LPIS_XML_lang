@@ -29,6 +29,8 @@ namespace xmllang
             {
                 { "node", nameof(XMLNode) },
                 { "document", "Document" },
+                { "string", "string" },
+                { "int", "int" },
                 { "attr", nameof(XMLAttribute) }
             };
         }
@@ -191,30 +193,21 @@ namespace xmllang
 
         public override object VisitFunction_args([NotNull] xmllangParser.Function_argsContext context)
         {
-            var argsCount = context.ID().Length;
+            var argsCount = context.id().Length;
+            var result = VisitChildren(context);
 
             if (argsCount > 0)
             {
-                foreach (var name in context.ID())
-                {
-                    foreach (var type in context.datatype())
-                    {
-                        var stringified = type.Start.Text;
-                        TypeMap.TryGetValue(stringified, out var realType);
-
-                        CurrentFunction.Content.Append($"{realType} {name}, ");
-                    }
-                }
                 CurrentFunction.Content.Remove(CurrentFunction.Content.Length - 2, 2);
             }
             CurrentFunction.Content.Append(")\n\t\t{\n");
 
-            return VisitChildren(context);
+            return result;
         }
 
         public override object VisitFunction_call([NotNull] xmllangParser.Function_callContext context)
         {
-            var functionName = context.ID()[0].ToString();
+            var functionName = context.ID().ToString();
             Functions.TryGetValue(functionName, out var function);
 
             if (function == null)
@@ -223,17 +216,36 @@ namespace xmllang
             }
 
             CurrentFunction.Content.Append($"{functionName}(");
-
-            foreach (var arg in context.ID().TakeLast(context.ID().Length - 1))
-            {
-                CurrentFunction.Content.Append($"{arg.ToString()}, ");
-            }
+            var result = VisitChildren(context);
 
             CurrentFunction.Content.Remove(CurrentFunction.Content.Length - 2, 2).Append($");\n");
+            return result;
+        }
+
+        public override object VisitFunction_call_arg([NotNull] xmllangParser.Function_call_argContext context)
+        {
             return VisitChildren(context);
         }
 
         #endregion
+
+        public override object VisitId([NotNull] xmllangParser.IdContext context)
+        {
+            var id = context.GetText();
+            CurrentFunction.Content.Append($"{id}, ");
+
+            return VisitChildren(context);
+        }
+
+        public override object VisitDatatype([NotNull] xmllangParser.DatatypeContext context)
+        {
+            var type = context.GetText();
+
+            TypeMap.TryGetValue(type, out var realType);
+            CurrentFunction.Content.Append($"{realType} ");
+
+            return VisitChildren(context);
+        }
 
         public override object VisitIf_declaration([NotNull] xmllangParser.If_declarationContext context)
         {
@@ -250,32 +262,42 @@ namespace xmllang
             return VisitChildren(context);
         }
 
+        public override object VisitPrimitive_value([NotNull] xmllangParser.Primitive_valueContext context)
+        {
+            return VisitChildren(context);
+        }
+
         public override object VisitAccess_name([NotNull] xmllangParser.Access_nameContext context)
         {
+            var varName = context.ID().ToString();
+            var prop = context.NAME().ToString();
+
+            if (CurrentVarScope.GetVarValue(varName) == null)
+            {
+                throw new Exception(VisitorExceptionMessages.VarNotDefined);
+            }
+
+            CurrentFunction.Content.Append($"{varName}.{prop}");
+
             return VisitChildren(context);
         }
 
         public override object VisitAccess_text([NotNull] xmllangParser.Access_textContext context)
         {
+            var varName = context.ID().ToString();
+            var prop = context.TEXT().ToString();
+
+            if (CurrentVarScope.GetVarValue(varName) == null)
+            {
+                throw new Exception(VisitorExceptionMessages.VarNotDefined);
+            }
+
+            CurrentFunction.Content.Append($"{varName}.{prop}");
+
             return VisitChildren(context);
         }
 
         public override object VisitAccess_value([NotNull] xmllangParser.Access_valueContext context)
-        {
-            return VisitChildren(context);
-        }
-
-        public override object VisitCaseId([NotNull] xmllangParser.CaseIdContext context)
-        {
-            return VisitChildren(context);
-        }
-
-        public override object VisitCaseStr([NotNull] xmllangParser.CaseStrContext context)
-        {
-            return VisitChildren(context);
-        }
-
-        public override object VisitCaseInt([NotNull] xmllangParser.CaseIntContext context)
         {
             return VisitChildren(context);
         }
@@ -296,11 +318,6 @@ namespace xmllang
         }
 
         public override object VisitEnd([NotNull] xmllangParser.EndContext context)
-        {
-            return VisitChildren(context);
-        }
-
-        public override object VisitDatatype([NotNull] xmllangParser.DatatypeContext context)
         {
             return VisitChildren(context);
         }
