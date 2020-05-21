@@ -8,5 +8,9 @@ a(node tag) {
 
 b() {
 	node document("document")
+	node dd("dd")
+	attr aa("1", "2")
+	document adds child dd
 	a(document)
+	document removes attr aa
 }

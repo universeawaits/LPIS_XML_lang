@@ -7,8 +7,8 @@ namespace xmllang {
         public string Name { get; set; }
         public string Text { get; set; }
         public string Value { get; set; }
-        public IEnumerable<XMLAttribute> Attributes { get; }
-        public IEnumerable<XMLNode> Children { get; }
+        public IEnumerable<XMLAttribute> Attributes { get; set; }
+        public IEnumerable<XMLNode> Children { get; set; }
 
         public XMLNode(string name)
         {

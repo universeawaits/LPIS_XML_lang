@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using System.Text;
 using System.Collections.Generic;
 
@@ -110,18 +109,26 @@ namespace xmllang
 
         public override object VisitAppend_atr([NotNull] xmllangParser.Append_atrContext context)
         {
-            CurrentFunction.Content.Append($"{context.ID()[0]}.{nameof(XMLNode.Attributes)}.Append({context.ID(1)});\n");
+            CurrentFunction.Content.Append($"{context.ID(0)}.{nameof(XMLNode.Attributes)}.Append({context.ID(1)});\n");
 
             return VisitChildren(context);
         }
 
         public override object VisitRemove_tag([NotNull] xmllangParser.Remove_tagContext context)
         {
+            CurrentFunction.Content.Append($"{context.ID(0)}.{nameof(XMLNode.Children)} = " +
+                $"{context.ID(0)}.{nameof(XMLNode.Children)}" +
+                $".Where(n => !n.Name.Equals({context.ID(1)}));\n");
+
             return VisitChildren(context);
         }
 
         public override object VisitRemove_atr([NotNull] xmllangParser.Remove_atrContext context)
         {
+            CurrentFunction.Content.Append($"{context.ID(0)}.{nameof(XMLNode.Attributes)} = " +
+                $"{context.ID(0)}.{nameof(XMLNode.Attributes)}" +
+                $".Where(n => !n.Name.Equals({context.ID(1)}));\n");
+
             return VisitChildren(context);
         }
 
