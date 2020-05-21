@@ -47,7 +47,7 @@ OPEN_BLOCK      : '{';
 CLOSE_BLOCK     : '}';
 
 function_declaration: function_decl statement+ end empty_stat*;
-empty_stat: NEWLINE | SPACE;
+empty_stat: NEWLINE | SPACE ;
 statement : 
       SPACE* TAG SPACE ID OPEN_BRACKET STRING CLOSE_BRACKET NEWLINE                       # tag_assignment
     | SPACE* ATTR SPACE ID OPEN_BRACKET STRING COMMA SPACE STRING CLOSE_BRACKET NEWLINE   # attr_assignment
@@ -90,7 +90,7 @@ end             : SPACE* CLOSE_BLOCK NEWLINE;
 datatype        : TAG | ATTR | ARRAY | primitive;
 primitive       : 'int' | 'string';
 function_decl   : SPACE* ID OPEN_BRACKET function_args CLOSE_BRACKET SPACE OPEN_BLOCK NEWLINE;
-function_args   : datatype SPACE ID (COMMA SPACE datatype SPACE ID)*;
+function_args   : empty_stat? | datatype SPACE ID (COMMA SPACE datatype SPACE ID)* ;
 begin_if        : IF SPACE comparison SPACE OPEN_BLOCK NEWLINE;
 comparison      : access_info SPACE (EQ|NOT) SPACE STRING;
 else_thing      : CLOSE_BLOCK SPACE ELSE SPACE OPEN_BLOCK NEWLINE;

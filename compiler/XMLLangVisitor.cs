@@ -193,19 +193,18 @@ namespace xmllang
         {
             var argsCount = context.ID().Length;
 
-            foreach (var name in context.ID())
-            {
-                foreach (var type in context.datatype())
-                {
-                    var stringified = type.Start.Text;
-                    TypeMap.TryGetValue(stringified, out var realType);
-
-                    CurrentFunction.Content.Append($"{realType} {name}, ");
-                }
-            }
-
             if (argsCount > 0)
             {
+                foreach (var name in context.ID())
+                {
+                    foreach (var type in context.datatype())
+                    {
+                        var stringified = type.Start.Text;
+                        TypeMap.TryGetValue(stringified, out var realType);
+
+                        CurrentFunction.Content.Append($"{realType} {name}, ");
+                    }
+                }
                 CurrentFunction.Content.Remove(CurrentFunction.Content.Length - 2, 2);
             }
             CurrentFunction.Content.Append(")\n\t\t{\n");
